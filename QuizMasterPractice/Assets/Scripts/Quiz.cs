@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
+
 public class Quiz : MonoBehaviour
 {
     [Header("Questions")]
@@ -12,6 +14,7 @@ public class Quiz : MonoBehaviour
     [Header("Answer")]
     [SerializeField] GameObject[] answerButtons;
     int correctAnswerIndex;
+    bool hasAnsweredEarly;
 
     [Header("Button Colors")]
     [SerializeField] Sprite defaultAnswerSprite;
@@ -31,12 +34,26 @@ public class Quiz : MonoBehaviour
         timerImage.fillAmount = timer.fillFraction;
         if (timer.loadNextQuestion)
         {
+            hasAnsweredEarly = false;
             GetNextQuestion();
             timer.loadNextQuestion = false;
+        }
+        else if (!hasAnsweredEarly && !timer.isAnweringQuestion)
+        {
+            DisplayAnswer(-1);
+            SetButtonsState(false);
         }
     }
 
     public void AnswerSelected(int index)
+    {
+        hasAnsweredEarly = true;
+        DisplayAnswer(index);
+        SetButtonsState(false);
+        timer.CancelTimer();
+    }
+
+    void DisplayAnswer(int index)
     {
         Image buttonImage;
         if (index == question.GetCorrectAnswerIndex())
@@ -52,9 +69,6 @@ public class Quiz : MonoBehaviour
             buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
         }
-
-        SetButtonsState(false);
-        timer.CancelTimer();
     }
 
     void GetNextQuestion()
