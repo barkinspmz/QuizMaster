@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36bb595b77953244bac10669fad6e747, type: 3}
-  m_Name: New Question
+  m_Name: Question2
   m_EditorClassIdentifier: 
-  question: Enter the question here
+  question: Integer data types stores __?
