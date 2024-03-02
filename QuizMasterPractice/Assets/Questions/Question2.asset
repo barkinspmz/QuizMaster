@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bb595b77953244bac10669fad6e747, type: 3}
   m_Name: Question2
   m_EditorClassIdentifier: 
-  question: Integer data types stores __?
+  question: Type of Conversion in which compiler is unable to convert the data type
+    implicitly is?
+  answers:
+  - ushort to long
+  - int to uint
+  - ushort to long
+  - byte to decimal
+  correctAnswerIndex: 1

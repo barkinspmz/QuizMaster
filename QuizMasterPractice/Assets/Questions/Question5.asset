@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question5
   m_EditorClassIdentifier: 
   question: "int a = 10; \nint b = 4;\nConsole.WriteLine(a-b*4);\nOutput = ?"
+  answers:
+  - -6
+  - 6
+  - 24
+  - -24
+  correctAnswerIndex: 0

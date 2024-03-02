@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bb595b77953244bac10669fad6e747, type: 3}
   m_Name: Question4
   m_EditorClassIdentifier: 
-  question: Which one is explicit casting?
+  question: 'The correct way of incrementing the operators are:'
+  answers:
+  - ++ a ++
+  - b ++ 1
+  - c += 1
+  - d =+ 1
+  correctAnswerIndex: 2
